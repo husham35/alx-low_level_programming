@@ -14,11 +14,11 @@ int main(void)
 	int t;
 	int o;
 
-	for (tens = '0'; tens <= '9'; tens++) /* main loop to print first two digit combo */
+	for (tens = '0'; tens <= '9'; tens++) /* first two digit combo*/
 	{
 		for (ones = '0'; ones <= '9'; ones++)
 		{
-		 	for (t = tens; t <= '9'; t++) /* third inner loop to print second of pair */
+		 	for (t = tens; t <= '9'; t++) /* second pair pair */
 			{
 				for (o = ones + 1; o <= '9'; o++)
 				{
