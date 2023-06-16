@@ -17,11 +17,12 @@ int main(void)
 		putchar(alphabet);
 		alphabet++;
 	}
+
 	while (ALPHABET <= 'Z')
-        {
-                putchar(ALPHABET);
-                ALPHABET++;
-        }
+	{
+		putchar(ALPHABET);
+		ALPHABET++;
+	}
 	putchar('\n');
 
 	return (0);
