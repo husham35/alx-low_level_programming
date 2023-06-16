@@ -3,30 +3,39 @@
 /**
  * main - main block
  * Description: This program prints
- * the 3 digits numbers from 012 to 789.
+ * the 2 digits numbers from 00 to 99.
  * Return: 0
  */
 
 int main(void)
 {
-	int one;
-	int ten;
-	int hundred;
+	int tens;
+	int ones;
+	int t;
+	int o;
 
-	for (hundred = '0'; hundred <= '9'; hundred++) /* digits in hundreds */
+	for (tens = '0'; tens <= '9'; tens++) /* main loop to print first two digit combo */
 	{
-		for (ten = (hundred + 1); ten <= '9'; ten++) /* digits in tens */
+		for (ones = '0'; ones <= '9'; ones++)
 		{
-			for (one = (ten + 1); one <= '9'; one++) /* digits in ones */
+		 	for (t = tens; t <= '9'; t++) /* third inner loop to print second of pair */
 			{
-				putchar(hundred);
-				putchar(ten);
-				putchar(one);
-				if (hundred != '7' || ten != '8' || one != '9')
+				for (o = ones + 1; o <= '9'; o++)
 				{
-					putchar(',');
+					putchar(tens);
+					putchar(ones);
 					putchar(' ');
+					putchar(t);
+					putchar(o);
+
+					if (!((tens == '9' && ones == '8') &&
+					      (t == '9' && o == '9')))
+					{
+						putchar(',');
+						putchar(' ');
+					}
 				}
+				o = '0';
 			}
 		}
 	}
