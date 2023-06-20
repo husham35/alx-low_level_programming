@@ -1,7 +1,8 @@
 #include "main.h"
 
 /**
- * int _islower - returns 1 if lowercase else return 0
+ * _islower - returns 1 if lowercase else return 0
+ * @c: alphabet to check
  * Return: 1 if lowercase else return 0
  */
 
