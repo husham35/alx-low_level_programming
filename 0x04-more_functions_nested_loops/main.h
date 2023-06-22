@@ -24,10 +24,18 @@ int _isdigit(int c);
 int mul(int a, int b);
 
 /**
- * print_numbers - multiplies the a and b, both of integer types
+ * print_numbers - prints numbers from 0 to 9
  * Return: void
  */
 void print_numbers(void);
+
+/**
+ * print_most_numbers - prints numbers from 0 to 9 excluding 2 and 4
+ * Return: void
+ */
+void print_most_numbers(void);
+
+
 
 
 
