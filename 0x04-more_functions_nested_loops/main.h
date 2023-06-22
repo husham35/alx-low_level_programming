@@ -42,6 +42,12 @@ void print_most_numbers(void);
  */
 void more_numbers(void);
 
+/**
+ * print_line - print straight line in terminal
+ * @n: lenght of line to print
+ * Return: void
+ */
+void print_line(int n);
 
 
 
