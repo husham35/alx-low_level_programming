@@ -70,7 +70,12 @@ void print_square(int size);
  */
 void print_triangle(int size);
 
-
+/**
+ * print_number - prints integer type numbers
+ * @n: the integer to print
+ * Return: void
+ */
+void print_number(int n);
 
 
 /**
