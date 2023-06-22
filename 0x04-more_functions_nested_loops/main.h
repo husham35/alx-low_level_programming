@@ -9,4 +9,12 @@
 int _isupper(int c);
 
 
+/**
+ * _isdigit - checks if a character is upper case or not
+ * @c: parameter to check
+ * Return: 1 if digit or 0 if not
+ */
+int _isdigit(int c);
+
+
 #endif
