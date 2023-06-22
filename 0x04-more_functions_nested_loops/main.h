@@ -49,6 +49,15 @@ void more_numbers(void);
  */
 void print_line(int n);
 
+/**
+ * print_diagonal - print diagonal line in terminal
+ * @n: lenght of line to print
+ * Return: void
+ */
+void print_diagonal(int n);
+
+
+
 
 
 /**
