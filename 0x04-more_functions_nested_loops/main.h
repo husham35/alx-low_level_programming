@@ -56,6 +56,14 @@ void print_line(int n);
  */
 void print_diagonal(int n);
 
+/**
+ * print_square - print square in terminal using #
+ * @size: number of # to print
+ * Return: void
+ */
+void print_square(int size);
+
+
 
 
 
