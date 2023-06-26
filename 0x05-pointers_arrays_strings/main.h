@@ -86,8 +86,13 @@ void print_number(int n);
 void reset_to_98(int *n);
 
 
-
-
+/**
+ * swap_int - swaps integer type numbers
+ * @a: pointer integer
+ * @b: pointer integer
+ * Return: void
+ */
+void swap_int(int *a, int *b);
 
 
 
