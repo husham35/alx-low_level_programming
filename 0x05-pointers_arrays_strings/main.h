@@ -152,7 +152,12 @@ void print_array(int *a, int n);
  */
 char *_strcpy(char *dest, char *src);
 
-
+/**
+ * _atoi - convert string to int type
+ * @s: string to convert, a char pointer
+ * Return: integer
+ */
+int _atoi(char *s);
 
 
 
