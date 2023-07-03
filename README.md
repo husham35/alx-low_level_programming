@@ -1,1 +1,1 @@
-Introductio the the C programming language
+0x05. C - Pointers, arrays and strings
