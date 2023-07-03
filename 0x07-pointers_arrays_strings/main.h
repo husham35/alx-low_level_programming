@@ -229,8 +229,8 @@ char *leet(char *);
 /**
  * _memset - fills the first n bytes of the memory area pointed
  * to by a s with the constant byte b
- * @*s: char pointer type
- * @*b: char pointr type
+ * @s: char pointer type
+ * @b: char pointr type
  * @n: unsigned integer type
  * Return: pointer to the memory area
  */
@@ -238,8 +238,8 @@ char *_memset(char *s, char b, unsigned int n);
 
 /**
  * _memcpy - copies n bytes from memory area src to memory area dest
- * @*dest: char pointer type
- * @*src: char pointr type
+ * @dest: char pointer type
+ * @src: char pointr type
  * @n: unsigned integer type
  * Return: pointer dest
  */
@@ -247,16 +247,16 @@ char *_memcpy(char *dest, char *src, unsigned int n);
 
 /**
  * _strchr - locates a character in a string
- * @*s: char pointr type
- * @*c: char pointer type
+ * @s: char pointr type
+ * @c: char pointer type
  * Return: pointer c
  */
 char *_strchr(char *s, char c);
 
 /**
  * _strspn - gets the length of a prefix substring
- * @*s: char pointr type
- * @*accept: char pointer type
+ * @s: char pointr type
+ * @accept: char pointer type
  * Return: int, the number of bytes in the initial segment
  * of s which consist only of bytes from accept
  */
@@ -265,8 +265,8 @@ unsigned int _strspn(char *s, char *accept);
 /**
  * _strbrk - locates the first occurrence in the string s
  * of any of the bytes in the string accept
- * @*s: char pointr type
- * @*accept: char pointer type
+ * @s: char pointr type
+ * @accept: char pointer type
  * Return: a pointer to the byte in s that matches one of
  * the bytes in accept, or NULL if no such byte is found
  */
@@ -274,8 +274,8 @@ char *_strpbrk(char *s, char *accept);
 
 /**
  * _strstr - locates a substring
- * @*haystack: char pointr type
- * @*needle: char pointer type
+ * @haystack: char pointr type
+ * @needle: char pointer type
  * Return: a pointer to the beginning of the located substring,
  * or NULL if the substring is not found
  */
@@ -283,7 +283,7 @@ char *_strstr(char *haystack, char *needle);
 
 /**
  * print_chessboard - prints the chessboard
- * @*a: char pointr type
+ * @a: char pointr type
  * Return: void
  */
 void print_chessboard(char (*a)[8]);
@@ -291,7 +291,7 @@ void print_chessboard(char (*a)[8]);
 /**
  * print_diagsums - prints the sum of the two diagonals
  * of a square matrix of integers
- * @*a: char pointr type
+ * @a: char pointr type
  * @size: int type
  * Return: void
  */
