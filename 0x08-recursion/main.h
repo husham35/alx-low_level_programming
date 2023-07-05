@@ -313,7 +313,7 @@ void set_string(char **s, char *to);
 void _puts_recursion(char *s);
 
 /**
- * _puts_recursion - prints a string in reverse using recursion
+ * _print_rev_recursion - prints a string in reverse using recursion
  * @s: char pointr type
  * Return: void
  */
