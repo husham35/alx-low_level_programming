@@ -414,6 +414,23 @@ int **alloc_grid(int width, int height);
  */
 void free_grid(int **grid, int height);
 
+/**
+ * argstostr - concatenates all the arguments of your program
+ * @ac: int type
+ * @av: char type pointer pointer
+ * Return: a pointer to a new string, or NULL if it fails
+ */
+char *argstostr(int ac, char **av);
+
+/**
+ * strtow - splits a string into words
+ * @av: char type pointer
+ * Return: a pointer to an array of strings (words),
+ * NULL if str == NULL or str == ""
+ */
+char **strtow(char *str);
+
+
 
 
 
