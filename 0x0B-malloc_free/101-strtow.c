@@ -54,7 +54,7 @@ char **strtow(char *str)
 	while (str[length] != '\0')
 	{
 		if (str[0] != ' ')
-		word++;
+			word++;
 		if (str[length] != ' ' && str[length - 1] == ' ' && length != 0)
 			word++;
 		length++;
@@ -73,7 +73,7 @@ char **strtow(char *str)
 			if (str[j] == ' ' && size > 0)
 				break;
 		}
-		printf("%d\n", size);
+		/* printf("%d\n", size); */
 		s[i] = (char *)malloc(sizeof(char) * size + 1);
 		if (s[i] == NULL)
 		{
