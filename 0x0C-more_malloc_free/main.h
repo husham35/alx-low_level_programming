@@ -462,7 +462,15 @@ void *_calloc(unsigned int nmemb, unsigned int size);
  */
 int *array_range(int min, int max);
 
-
+/**
+ * realloc - eallocates a memory block using malloc and free
+ * @ptr: pointer
+ * @old_size: unsigned int type
+ * @new_size: unsigned int type
+ * Return: NULL if new_size is equal to zero, and ptr is not NULL,
+ * else pointer
+ */
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 
 
 
