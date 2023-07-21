@@ -13,4 +13,15 @@ void print_str(va_list list);
 void print_float(va_list list);
 void print_int(va_list list);
 
+/**
+ * struct dt - struct
+ * @letter: letter signifying data type
+ * @func: function ptr
+ */
+typedef struct dt
+{
+	char letter;
+	void (*func)(va_list);
+} datatype;
+
 #endif
