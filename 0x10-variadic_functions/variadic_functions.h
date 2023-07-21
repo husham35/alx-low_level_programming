@@ -13,10 +13,4 @@ void print_str(va_list list);
 void print_float(va_list list);
 void print_int(va_list list);
 
-typedef struct check_list
-{
-	char *type;
-	void (*f)();
-} check_list;
-
 #endif
