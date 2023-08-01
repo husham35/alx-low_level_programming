@@ -8,7 +8,7 @@
  * Return: address of new node, or NULL if failed
  */
 
-listint_t *insert_nodeint_at_index(listint_t **head, unsigned int index, int n)
+listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *new;
 	listint_t *current;
@@ -18,7 +18,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int index, int n)
 		return (NULL);
 
 	current = *head;
-	for (count = 1; current && count < index; count++)
+	for (count = 1; current && count < idx; count++)
 	{
 		current = current->next;
 		if (current == NULL)
@@ -33,7 +33,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int index, int n)
 	}
 	new->n = n;
 
-	if (index == 0)
+	if (idx == 0)
 	{
 		*head = new;
 		new->next = current;
