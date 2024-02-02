@@ -1,83 +1,71 @@
 #include "hash_tables.h"
 
 /**
- * insert_node_at_beginning - adds a new node at the start of linked list
- * @head: first node of the singly-linked list
- * @node: new node to add - key/value pair
+ * add_hash_node - creates a new hash node
+ * @key: key for the node
+ * @value: the value for the node
+ *
+ * Return: the new node, otherwise NULL on failure
  */
-void insert_node_at_beginning(hash_node_t **head, hash_node_t *node)
+hash_node_t *add_hash_node(const char *key, const char *value)
 {
-	if (*head == NULL)
-		*head = node;
+	hash_node_t *node;
 
-	node->next = *head;
-	*head = node;
+	node = malloc(sizeof(hash_node_t));
+	if (node == NULL)
+		return (NULL);
+	node->key = strdup(key);
+	if (node->key == NULL)
+	{
+		free(node);
+		return (NULL);
+	}
+	node->value = strdup(value);
+	if (node->value == NULL)
+	{
+		free(node->key);
+		free(node);
+		return (NULL);
+	}
+	node->next = NULL;
+	return (node);
 }
 
 /**
  * hash_table_set - adds an element to the hash table
- * @ht: hash table to add the key/value pair to
- * @key: the key to be hashed, cannot ve an empty string
- * @value: the value associated with the key
- *
+ * @ht: the hash table
+ * @key: key for the data
+ * @value: value of node to be store
  * Return: 1 if successful, 0 otherwise
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *hash_t_pair, *hash_t_curr, **hash_t_container;
 	unsigned long int idx;
-	char *val_dup;
+	hash_node_t *hash_node, *tmp;
+	char *new_val;
 
-	if (!ht || !key || !(*key) || !value)
+	if (ht == NULL || ht->array == NULL || ht->size == 0 ||
+		key == NULL || strlen(key) == 0 || value == NULL)
 		return (0);
-
-	idx = key_index((unsigned char *)key, ht->size);
-	hash_t_container = &(ht->array[idx]);
-	hash_t_curr = ht->array[idx];
-
-	val_dup = strdup(value);
-	if (val_dup == NULL)
-		return (0);
-
-	while (hash_t_curr)
+	idx = key_index((const unsigned char *)key, ht->size);
+	tmp = ht->array[idx];
+	while (tmp != NULL)
 	{
-		if (strcmp(hash_t_curr->key, key) == 0)
+		if (strcmp(tmp->key, key) == 0)
 		{
-			free(hash_t_curr->value);
-			hash_t_curr->value = val_dup;
+			new_val = strdup(value);
+			if (new_val == NULL)
+				return (0);
+			free(tmp->value);
+			tmp->value = new_val;
 			return (1);
 		}
-		hash_t_curr = hash_t_curr->next;
+		tmp = tmp->next;
 	}
-
-	hash_t_pair = malloc(sizeof(hash_node_t));
-	if (hash_t_pair == NULL)
-	{
-		free(val_dup);
+	hash_node = add_hash_node(key, value);
+	if (hash_node == NULL)
 		return (0);
-	}
-
-	hash_t_pair->key = strdup(key);
-	if (hash_t_pair->key == NULL)
-	{
-		free(val_dup);
-		free(hash_t_pair);
-		return (0);
-	}
-
-	hash_t_pair->value = val_dup;
-	hash_t_pair->next = NULL;
-
-	/* case index is not taken, place the new key-value pair here. */
-	if (*hash_t_container == NULL)
-	{
-		*hash_t_container = hash_t_pair;
-		return (1);
-	}
-
-	/* case there is a collision, add new node at start. */
-	if (*hash_t_container && strcmp((*hash_t_container)->key, key) != 0)
-		insert_node_at_beginning(&(*hash_t_container), hash_t_pair);
-
+	hash_node->next = ht->array[idx];
+	ht->array[idx] = hash_node;
 	return (1);
 }
