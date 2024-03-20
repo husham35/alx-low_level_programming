@@ -1,17 +1,17 @@
 #!/usr/bin/python3
 """
- Module contains the function island_perimeter 
+Module contains the function island_perimeter
 """
 
 
 def island_perimeter(grid):
     """
-	Returns the perimeter of island described in grid 
-	Args:
+    Returns the perimeter of island described in grid
+    Args:
         grid (list): A list of list of integers representing an island.
     Returns:
         The perimeter of the island defined in grid.
-	"""
+    """
     perimeter = 0
 
     nrows = len(grid)
