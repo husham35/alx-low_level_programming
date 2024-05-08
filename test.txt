@@ -1,0 +1,8 @@
+gcc -fPIC -shared -o libdynamic.so functions/*.c
+
+#!/bin/bash
+gcc -fPIC -shared -o liball.so *.c
+
+
+
+gcc -fPIC -shared -o 100-operations.so 100-operations.c
