@@ -6,7 +6,7 @@
  * @array: a pointer to the first element of the array to search in
  * @size: the number of elements in array
  * @value: the value to search for
- *
+ * Description: Implementation of Linear search algorithm
  * Return: the first index where value is located, else -1
  *	if value is not present in array or if array is NULL
  */
